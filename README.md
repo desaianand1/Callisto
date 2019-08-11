@@ -1,6 +1,6 @@
 ## Callisto
 
-Callisto is an intelligent producitivity tool that can sync with your calendar and help you organise tasks and schedule work. This app is built from the ground up in Java, with JavaFX for the GUI. Not only is Callisto lightweight and intelligent, but also portable and is able to run on any machine with Java 8+ installed, without the need for any 3rd party software or libraries!
+Callisto is an intelligent producitivity tool that can sync with your calendar and help you organise tasks and schedule work. This app is built from the ground up in Java, with JavaFX for the GUI. Not only is Callisto lightweight and intelligent, but also portable and is able to run on any machine with Java 8+ installed!
 
 The idea behind Callisto is to take the burden of a hectic schedule off your shoulders by organising your work, scheduling tasks, setting up reminders before deadlines and saving any flashcard or notes you need to remember for the future. 
 
