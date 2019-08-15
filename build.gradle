@@ -31,7 +31,7 @@ dependencies {
     compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.9'
     compile group: 'com.calendarfx', name: 'calendar', version: '11.5.0', ext: 'pom'
     compile group: 'com.dlsc.formsfx', name: 'formsfx-core', version: '11.3.2'
-    compile group: 'org.kordamp.jsilhouette', name: 'jsilhouette-javafx', version: '0.3.0'
+//    compile group: 'org.kordamp.jsilhouette',jsilhouette name: 'jsilhouette-javafx', version: '0.3.0'
     compile group: 'org.jfxtras', name: 'jfxtras-all', version: '10.0-r1'
     compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
     compile group: 'org.kordamp.bootstrapfx', name: 'bootstrapfx-core', version: '0.2.4'
