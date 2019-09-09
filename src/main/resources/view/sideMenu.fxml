@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.StackPane?>
+<?import java.lang.String?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+    <styleClass>
+        <String fx:value="side-menu"/>
+    </styleClass>
+    <JFXListView fx:id="sideList">
+        <Label fx:id="today">Today</Label>
+        <Label fx:id="next_week">Next 7 Days</Label>
+        <Label fx:id="schedule">Rose Schedule</Label>
+        <Label fx:id="homework">Homework</Label>
+        <Label fx:id="notes">Notes</Label>
+        <Label fx:id="statistics">Statistics</Label>
+        <Label fx:id="Settings">Settings</Label>
+    </JFXListView>
+</StackPane>

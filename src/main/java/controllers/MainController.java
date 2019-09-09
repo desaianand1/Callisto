@@ -18,7 +18,6 @@ import javax.annotation.PostConstruct;
 import static io.datafx.controller.flow.container.ContainerAnimations.SWIPE_LEFT;
 
 @ViewController(value = "/view/main.fxml", title = "Main ")
-
 public class MainController {
 
     @FXMLViewFlowContext

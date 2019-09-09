@@ -1,55 +1,72 @@
+import com.jfoenix.controls.JFXDecorator;
+import controllers.MainController;
+import db.DBConnection;
+import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
+import de.codecentric.centerdevice.javafxsvg.dimension.PrimitiveDimensionProvider;
+import io.datafx.controller.flow.Flow;
+import io.datafx.controller.flow.FlowException;
+import io.datafx.controller.flow.container.DefaultFlowContainer;
+import io.datafx.controller.flow.context.FXMLViewFlowContext;
+import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.image.Image;
+import javafx.collections.ObservableList;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import lk.vivoxalabs.customstage.CustomStage;
-import lk.vivoxalabs.customstage.CustomStageBuilder;
-import lk.vivoxalabs.customstage.tools.HorizontalPos;
-
-import java.io.IOException;
 
 public class Main extends Application {
 
-    private static final String mainFXML = "view/main.fxml";
-    private static final String cssURL = "css/";
-    private static final String imgURL = "images/";
+    private static final String MAIN_FXML = "view/main.fxml";
+    private static final String CSS_URL = "css/";
+    private static final String IMG_URL = "images/";
+    private static final String DB_NAME = "callisto.db";
+
+
+    @FXMLViewFlowContext
+    private ViewFlowContext flowContext;
 
     public static void main(String[] args) {
+        DBConnection dbConnection = new DBConnection(DB_NAME);
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        Parent root = null;
-        CustomStage stage = null;
+    public void start(Stage stage) {
+        SvgImageLoaderFactory.install(new PrimitiveDimensionProvider());
+
+        Flow flow = new Flow(MainController.class);
+        DefaultFlowContainer container = new DefaultFlowContainer();
+        flowContext = new ViewFlowContext();
+        flowContext.register("primaryStage", stage);
+
         try {
-            root = FXMLLoader.load(getClass().getResource(mainFXML));
-
-            stage = new CustomStageBuilder()
-                    .setWindowTitle("Callisto", HorizontalPos.RIGHT, HorizontalPos.CENTER)
-                    .setActionIcons(
-                            new Image(imgURL + "window-close.svg"),    //Close
-                            new Image(imgURL + "window-minimize.svg"), //Minimize
-                            new Image(imgURL + "window-maximize.svg"), // Maximize
-                            new Image(imgURL + "window-restore.svg"))  // Restore
-                    .setTitleColor("black")
-//                    .setStyleSheet(getClass().getResource(cssURL + "title_bar.css"))
-                    .setIcon(imgURL + "logo.png")
-                    .setButtonHoverColor("FFAB40", "FFAB40", "d32f2f")
-                    .setDimensions(450, 450, 1920, 1080) //min,max values for window resizing
-                    .setWindowColor("FF6D00")
-                    .build();
-
-        } catch (IOException e) {
-            e.getMessage();
+            flow.createHandler(flowContext).start(container);
+        } catch (FlowException e) {
             e.printStackTrace();
         }
 
-        if (root != null && stage != null) {
-//            Scene scene = new Scene(root);
-//            stage.setScene(scene);
-            stage.show();
-        }
+        JFXDecorator decorator = new JFXDecorator(stage, container.getView());
+        decorator.setCustomMaximize(true);
+//        decorator.setGraphic();
+        decorator.setTitle("Callisto");
+        decorator.setId("decorator");
+        double width = 1024;
+        double height = 576;
+//        try {
+//            Rectangle2D bounds = Screen.getScreens().get(0).getBounds();
+//            width = bounds.getWidth() / 2.5;
+//            height = bounds.getHeight() / 1.35;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        Scene scene = new Scene(decorator, width, height);
+        final ObservableList<String> stylesheets = scene.getStylesheets();
+        stylesheets.addAll(
+                getClass().getResource("/css/font.css").toExternalForm(),   // font.css has to always be loaded first
+                getClass().getResource("/css/title_bar.css").toExternalForm(),
+                getClass().getResource("/css/body.css").toExternalForm()
+        );
+        stage.setScene(scene);
+        stage.show();
     }
 }
