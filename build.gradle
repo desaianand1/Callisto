@@ -19,6 +19,13 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+application {
+    applicationDefaultJvmArgs =  [
+            "--add-opens=javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED",
+            "--add-opens=javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED"
+    ]
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -31,25 +38,31 @@ dependencies {
     compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.9'
     compile group: 'com.calendarfx', name: 'calendar', version: '11.5.0', ext: 'pom'
     compile group: 'com.dlsc.formsfx', name: 'formsfx-core', version: '11.3.2'
-    compile group: 'org.kordamp.jsilhouette', name: 'jsilhouette-javafx', version: '0.3.0'
+    compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+    compile group: 'io.datafx', name: 'datafx', version: '8.0.1'
+    compile group: 'io.datafx', name: 'core', version: '8.0.1'
+    compile group: 'io.datafx', name: 'flow', version: '8.0.1'
     compile group: 'org.jfxtras', name: 'jfxtras-all', version: '10.0-r1'
     compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
     compile group: 'org.kordamp.bootstrapfx', name: 'bootstrapfx-core', version: '0.2.4'
     compile group: 'de.jensd', name: 'fontawesomefx', version: '8.9'
     compile group: 'io.github.typhon0', name: 'AnimateFX', version: '1.2.1'
-    compile group: 'lk.vivoxalabs.customstage', name: 'CustomStage', version: '1.3.2'
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.28.0'
+//    compile group: 'lk.vivoxalabs.customstage', name: 'CustomStage', version: '1.3.2'
     compile group: 'com.dlsc.preferencesfx', name: 'preferencesfx-core', version: '11.3.2'
+    compile group: 'de.codecentric.centerdevice', name: 'javafxsvg', version: '1.3.0'
 
 }
 
 javafx {
-    modules = ['javafx.controls','javafx.fxml']
+    modules = ['javafx.controls','javafx.fxml','javafx.graphics']
 }
 
 mainClassName = 'Main'
 
 fxlauncher {
-    applicationVendor 'My Company'
+    applicationVendor 'Anand Desai'
     // Base URL where you will host the application artifacts
     applicationUrl 'http://fxldemo.tornado.no/'
     applicationMainClass 'no.tornado.FxlDemo'

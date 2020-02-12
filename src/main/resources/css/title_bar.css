@@ -1,0 +1,23 @@
+
+
+
+#title_decorator {
+    -fx-font-family: "Lobster Two Bold Italic";
+    -fx-font-smoothing-type: gray;
+    -fx-text-fill: #A9B9BF;
+    -fx-font-size: 16.0;
+    -fx-decorator-color: #272E40;
+}
+
+.jfx-decorator {
+    -fx-decorator-color: #272E40;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+}
+
