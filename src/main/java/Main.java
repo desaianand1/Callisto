@@ -48,7 +48,7 @@ public class Main extends Application {
         decorator.setCustomMaximize(true);
 //        decorator.setGraphic();
         decorator.setTitle("Callisto");
-        decorator.setId("decorator");
+        decorator.setId("title_decorator");
         double width = 1024;
         double height = 576;
 //        try {
@@ -62,7 +62,7 @@ public class Main extends Application {
         Scene scene = new Scene(decorator, width, height);
         final ObservableList<String> stylesheets = scene.getStylesheets();
         stylesheets.addAll(
-                getClass().getResource("/css/font.css").toExternalForm(),   // font.css has to always be loaded first
+                getClass().getResource("/css/font.css").toExternalForm(),   // font.css must always be loaded first.
                 getClass().getResource("/css/title_bar.css").toExternalForm(),
                 getClass().getResource("/css/body.css").toExternalForm()
         );

@@ -1,4 +1,18 @@
 .root {
     -fx-font-family: "Roboto";
+    src: url("resources/font/Roboto/Roboto-Regular.ttf");
+}
+
+.sideDrawer {
+    -fx-font-family: "Roboto";
     -fx-font-smoothing-type: gray;
 }
+
+/*
+.side-menu {
+    -fx-font-family: "Roboto";
+    -fx-font-smoothing-type: gray;
+
+}
+
+*/
