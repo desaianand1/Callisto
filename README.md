@@ -1,11 +1,14 @@
 > [!WARNING]
-> Deprecated. This project's source was never made publicly available. I no longer want to maintain this so this shell of a repository is effectively archived henceforth.
+> Deprecated. This project's source was never made publicly available. I no longer want to maintain this project so this repository is effectively archived.
+
+![Static Badge](https://img.shields.io/badge/Status-Deprecated-yellow?style=flat) ![Static Badge](https://img.shields.io/badge/Windows-Available-lightgreen?style=flat&logo=windows10) ![Static Badge](https://img.shields.io/badge/macOS-Available-lightblue?style=flat&logo=apple)
+
 
 # 🌑 Callisto
 
-> Callisto: moon of Jupiter, Artemis' huntress companion; Also, Cal(endar)-List-o ...yeah.
+> Callisto: moon of Jupiter, Artemis' huntress companion; Also, Cal(endar)-List-o
 
-Callisto is an intelligent producitivity tool that can sync with your calendar and help you organise tasks and schedule work. This app is built from the ground up with Java, JavaFX and SQLite. Not only is Callisto lightweight and intelligent, but also portable. It is available cross-platform on macOS (Intel) and Windows.
+Callisto is an intelligent productivity tool that can sync with your calendar and help you organise tasks and schedule work. This app is built from the ground up with Java, JavaFX and SQLite. It is available cross-platform on macOS (Intel) and Windows.
 
 The idea behind Callisto is to take the burden of a hectic schedule off your shoulders by organising your work, scheduling tasks, setting reminders before deadlines and saving any flashcards or notes you need to remember for the future.
 
@@ -23,6 +26,7 @@ The idea behind Callisto is to take the burden of a hectic schedule off your sho
 
 Download the respective installer for your OS:
   - macOS: Download the `.dmg` installer and run it to install the app. You may receive a warning that prevents the app from launching. Right click the installer and select "Open" to launch it thereafter
-    > [!Warning]
-    > This has not been tested on macOS 10.15+ (beyond Catalina), so performance and experience may vary.
+  > [!WARNING]
+  > This has not been tested on macOS 10.15+ (beyond Catalina), so performance and experience may vary.
+    
   - Windows: Download the `.msi` installer and run it to install the app.
